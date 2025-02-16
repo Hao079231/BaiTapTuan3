@@ -17,6 +17,7 @@ public interface ProductMapper {
       @Mapping(source = "productName", target = "name"),
       @Mapping(source = "productQuantity", target = "quantity"),
       @Mapping(source = "productIcon", target = "icon"),
+      @Mapping(source = "productDateValue", target = "productDate"),
       @Mapping(source = "categoryId", target = "category.id")
   })
   Product convertToProduct(ProductForm request);
@@ -25,6 +26,7 @@ public interface ProductMapper {
       @Mapping(source = "name", target = "productName"),
       @Mapping(source = "quantity", target = "productQuantity"),
       @Mapping(source = "icon", target = "productIcon"),
+      @Mapping(source = "productDate", target = "productDateValue"),
       @Mapping(source = "category.id", target = "categoryId")
   })
   @Named("mapProductDto")
@@ -37,6 +39,7 @@ public interface ProductMapper {
       @Mapping(source = "productName", target = "name"),
       @Mapping(source = "productQuantity", target = "quantity"),
       @Mapping(source = "productIcon", target = "icon"),
+      @Mapping(source = "productDateValue", target = "productDate"),
       @Mapping(source = "categoryId", target = "category.id")
   })
   Product updateProduct(ProductForm request);

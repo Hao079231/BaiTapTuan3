@@ -24,7 +24,7 @@ public class CategoryService {
     }
 
     Category category = categoryMapper.convertToCategory(request);
-    category.setIcon(request.getCategoryIcon() != null ? request.getCategoryIcon(): "");
+    category.setIcon(request.getCategoryIcon() != null ? request.getCategoryIcon(): "Image Empty");
     return categoryMapper.convertToCategoryResponse(categoryRepository.save(category));
   }
 

@@ -1,6 +1,7 @@
 package vn.ute.baitaptuan3.model;
 
 import jakarta.persistence.*;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,9 @@ public class Product {
 
   @Column(nullable = false)
   private String icon;
+
+  @Column(nullable = false)
+  private Date productDate;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "category_id", referencedColumnName = "id")

@@ -1,7 +1,11 @@
 package vn.ute.baitaptuan3.form;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Past;
+import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,6 +22,10 @@ public class ProductForm {
 
   @NotEmpty(message = "Hình ảnh sản phẩm không thể trống")
   private String productIcon;
+
+  @Past(message = "Ngày sản xuất phải là ngày trong quá khứ")
+  @JsonFormat(shape = Shape.STRING, pattern = "dd-MM-yyyy")
+  private Date productDateValue;
 
   @NotNull(message = "Phải tham chiếu đến danh mục tương ứng")
   private Long categoryId;
