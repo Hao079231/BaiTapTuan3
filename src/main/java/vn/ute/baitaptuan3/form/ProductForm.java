@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat.Shape;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
+import java.time.LocalDate;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,8 +25,8 @@ public class ProductForm {
   private String productIcon;
 
   @Past(message = "Ngày sản xuất phải là ngày trong quá khứ")
-  @JsonFormat(shape = Shape.STRING, pattern = "dd-MM-yyyy")
-  private Date productDateValue;
+  @JsonFormat(pattern = "dd-MM-yyyy")
+  private LocalDate productDateValue;
 
   @NotNull(message = "Phải tham chiếu đến danh mục tương ứng")
   private Long categoryId;

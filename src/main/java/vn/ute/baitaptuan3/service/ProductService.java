@@ -39,7 +39,6 @@ public class ProductService {
         .orElseThrow(() -> new ResourceNotFound("Danh mục không tồn tại"));
 
     Product product = productMapper.convertToProduct(request);
-    product.setIcon(request.getProductIcon() != null ? request.getProductIcon() : "Image Empty");
     product.setCategory(category);
 
     return productMapper.convertToProductResponse(productRepository.save(product));

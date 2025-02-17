@@ -1,6 +1,7 @@
 package vn.ute.baitaptuan3.model;
 
 import jakarta.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +26,7 @@ public class Product {
   private String icon;
 
   @Column(nullable = false)
-  private Date productDate;
+  private LocalDate productDate;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "category_id", referencedColumnName = "id")
